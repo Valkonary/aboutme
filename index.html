@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Link/June</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;900&family=Roboto+Mono:wght@400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto Mono', monospace;
+            background-color: #000000;
+            color: #ffffff;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* --- Kinetic Text Background --- */
+        #kinetic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .kinetic-line {
+            font-family: 'Poppins', sans-serif;
+            position: absolute;
+            white-space: nowrap;
+            font-size: 8vw;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.07);
+            animation: marquee 20s linear infinite;
+        }
+
+        .kinetic-line.alt {
+            animation-direction: reverse;
+            animation-duration: 30s;
+        }
+
+        .kinetic-line:nth-child(1) { top: 5%; animation-duration: 22s; }
+        .kinetic-line:nth-child(2) { top: 20%; animation-duration: 35s; }
+        .kinetic-line:nth-child(3) { top: 35%; animation-duration: 18s; }
+        .kinetic-line:nth-child(4) { top: 50%; animation-duration: 28s; }
+        .kinetic-line:nth-child(5) { top: 65%; animation-duration: 25s; }
+        .kinetic-line:nth-child(6) { top: 80%; animation-duration: 40s; }
+
+        @keyframes marquee {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(100vw); }
+        }
+
+        /* --- Main Content --- */
+        #main-content {
+            position: relative;
+            z-index: 2;
+            padding: 2rem;
+            text-align: center;
+            max-width: 450px;
+            width: 90%;
+            opacity: 0;
+            animation: fadeIn 1s ease 0.5s forwards, float 6s ease-in-out infinite;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .profile-pic {
+            width: 128px;
+            height: 128px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            border: 4px solid #ffffff;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
+            filter: grayscale(100%) contrast(1.1);
+            transition: transform 0.3s ease;
+        }
+        .profile-pic:hover {
+             transform: scale(1.05);
+        }
+
+        .hobby-item {
+            display: inline-flex;
+            align-items: center;
+            border: 1px solid rgba(255,255,255,0.4);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            margin: 0.25rem;
+            font-size: 0.875rem;
+            transition: background-color 0.2s;
+        }
+        .hobby-item:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* --- Sound & Birthday --- */
+        #sound-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 100;
+            background-color: #ffffff;
+            color: #000000;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+            transition: transform 0.2s ease, background-color 0.2s ease;
+        }
+
+        #sound-toggle:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+        
+        #player {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+        }
+        
+        #birthday-countdown {
+            background: #ffffff;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 10px #ffffff; }
+            50% { transform: scale(1.03); box-shadow: 0 0 20px #ffffff; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Moving Text -->
+    <div id="kinetic-bg">
+        <div class="kinetic-line">LINK / JUNE ISFP LOVES MY BF</div>
+        <div class="kinetic-line alt">CODING SLEEPING (LOL) AGE 17</div>
+        <div class="kinetic-line">ISFP JUNE 19TH LINK / JUNE</div>
+        <div class="kinetic-line alt">SLEEPING (LOL) CODING LOVING MY BF</div>
+        <div class="kinetic-line">AGE 17 JUNE 19TH LINK / JUNE</div>
+        <div class="kinetic-line alt">LOVING MY BF ISFP CODING</div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <img src="https://content.cody.app/uploaded:image_c542dc.jpg-2fbbd85d-a2f3-416f-861f-8d57b6872ecc" alt="Profile Picture" class="profile-pic" onerror="this.onerror=null;this.src='https://placehold.co/128x128/000000/ffffff?text=PFP';"/>
+        <h1 class="text-5xl font-black text-white mb-1" style="font-family: 'Poppins', sans-serif;">Link / June</h1>
+        <p class="text-gray-400 text-lg mb-4">ISFP</p>
+
+        <div class="text-left my-6 space-y-2 text-gray-200">
+            <p><i class="fa-solid fa-cake-candles fa-fw mr-2 text-white"></i>Age: 17</p>
+            <p><i class="fa-solid fa-calendar-star fa-fw mr-2 text-white"></i>Birthday: June 19</p>
+        </div>
+        
+        <div class="my-6">
+            <h2 class="font-semibold text-xl mb-3 text-white" style="font-family: 'Poppins', sans-serif;">Hobbies</h2>
+            <div class="flex flex-wrap justify-center gap-2">
+                 <span class="hobby-item"><i class="fa-solid fa-heart fa-fw mr-2"></i>Loving my bf</span>
+                 <span class="hobby-item"><i class="fa-solid fa-code fa-fw mr-2"></i>Coding</span>
+                 <span class="hobby-item"><i class="fa-solid fa-bed fa-fw mr-2"></i>Sleeping (lol)</span>
+            </div>
+        </div>
+
+        <div id="birthday-countdown">
+            <!-- Countdown will be injected here -->
+        </div>
+    </div>
+
+    <!-- YouTube Player -->
+    <div id="player"></div>
+    <button id="sound-toggle">
+        <i id="sound-icon" class="fas fa-volume-mute"></i>
+    </button>
+
+    <script>
+        // --- YouTube Music Player ---
+        const videoId = 'O1PkZaFy61Y';
+        let player;
+        let isMuted = true;
+
+        const tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/iframe_api";
+        const firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+        
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '0',
+                width: '0',
+                videoId: videoId,
+                playerVars: { 'autoplay': 1, 'controls': 0, 'loop': 1, 'playlist': videoId },
+                events: { 'onReady': onPlayerReady }
+            });
+        }
+        
+        function onPlayerReady(event) {
+            // Start playing the video immediately but muted to satisfy autoplay policies
+            event.target.playVideo();
+            event.target.mute();
+            document.getElementById('sound-toggle').style.display = 'flex';
+        }
+        
+        const soundToggle = document.getElementById('sound-toggle');
+        const soundIcon = document.getElementById('sound-icon');
+        soundToggle.addEventListener('click', () => {
+            if (!player) return; // Don't do anything if player isn't ready
+            
+            if (isMuted) {
+                player.unMute();
+                soundIcon.classList.remove('fa-volume-mute');
+                soundIcon.classList.add('fa-volume-high');
+            } else {
+                player.mute();
+                soundIcon.classList.remove('fa-volume-high');
+                soundIcon.classList.add('fa-volume-mute');
+            }
+            isMuted = !isMuted;
+        });
+
+        // --- Birthday Countdown ---
+        function updateBirthdayCountdown() {
+            const countdownEl = document.getElementById('birthday-countdown');
+            const now = new Date();
+            let birthday = new Date(now.getFullYear(), 5, 19); 
+
+            if (now.getMonth() === 5 && now.getDate() > 19 || now.getMonth() > 5) {
+                birthday.setFullYear(now.getFullYear() + 1);
+            }
+            
+            const diff = birthday.getTime() - now.getTime();
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            
+            if (now.getDate() === 18 && now.getMonth() === 5) { // It's June 18th
+                 countdownEl.innerHTML = `<i class="fas fa-gift mr-2"></i>Birthday is TOMORROW!!`;
+            } else if (now.getDate() === 19 && now.getMonth() === 5) { // It's June 19th
+                 countdownEl.innerHTML = `<i class="fas fa-party-horn mr-2"></i>HAPPY BIRTHDAY!! 🎉`;
+            } else {
+                 countdownEl.innerHTML = `<i class="fas fa-hourglass-half mr-2"></i>${days + 1} days until birthday!`;
+            }
+        }
+        updateBirthdayCountdown();
+    </script>
+</body>
+</html>
